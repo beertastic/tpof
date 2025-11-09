@@ -20,7 +20,6 @@ class MailingController extends Controller
                 'email' => $request->email
             ]);
 
-
             return response()->json([
                 'status' => 1,
                 'email' => $email
