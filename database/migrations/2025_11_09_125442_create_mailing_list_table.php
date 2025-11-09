@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('mailing_list', function (Blueprint $table) {
             $table->id();
             $table->string('email');
-            $table->ipAddress();
+            $table->ipAddress()->default(0);
             $table->timestamps();
         });
     }
