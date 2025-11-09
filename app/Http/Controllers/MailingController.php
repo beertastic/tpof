@@ -18,13 +18,13 @@ class MailingController extends Controller
 
             $email = MailingList::firstOrCreate([
                 ['email' => $request->email],
-                ['ip_address' => $request->ip()]
+                ['ip_address' => $request->getClientIp()]
             ]);
 
             return response()->json([
                 'status' => 1,
                 'email' => $email->email,
-                'ip' => $request->ip()
+                'ip' => $request->getClientIp()
             ]);
         } else {
             return response()->json([
