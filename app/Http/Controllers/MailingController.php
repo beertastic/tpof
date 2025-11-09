@@ -10,17 +10,26 @@ class MailingController extends Controller
     public function catch(Request $request)
     {
 
-        $request->validate([
+        $validated = $request->validate([
             'email' => 'required|email'
         ]);
 
-        $email = MailingList::firstOrCreate ([
-            'email' => $request->email
-        ]);
+        if ($validated) {
 
-        return response()->json([
-            'status' => 1,
-            'email' => $email
-        ]);
+            $email = MailingList::firstOrCreate([
+                'email' => $request->email
+            ]);
+
+
+            return response()->json([
+                'status' => 1,
+                'email' => $email
+            ]);
+        } else {
+            return response()->json([
+                'status' => 0,
+                'email' => 'invalid'
+            ]);
+        }
     }
 }
