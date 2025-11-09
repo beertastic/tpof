@@ -9,7 +9,7 @@ class MailingController extends Controller
 {
     public function catch(Request $request)
     {
-
+        dd($request->getClientIp());
         $validated = $request->validate([
             'email' => 'required|email'
         ]);
