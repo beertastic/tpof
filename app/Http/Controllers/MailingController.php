@@ -15,10 +15,10 @@ class MailingController extends Controller
 
         if ($validated) {
 
-            $email = MailingList::firstOrCreate([
+            $email = MailingList::firstOrCreate(
                 ['email' => $request->email],
                 ['ip_address' => $request->getClientIp()]
-            ])->toSql();
+            );
 
             return response()->json([
                 'status' => 1,
