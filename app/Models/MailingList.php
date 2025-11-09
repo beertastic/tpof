@@ -11,5 +11,6 @@ class MailingList extends Model
     //
     protected $fillable = [
         'email',
+        'ip_address',
     ];
 }
