@@ -22,7 +22,7 @@ class MailingController extends Controller
 
             return response()->json([
                 'status' => 1,
-                'email' => $email
+                'email' => $email->email
             ]);
         } else {
             return response()->json([
