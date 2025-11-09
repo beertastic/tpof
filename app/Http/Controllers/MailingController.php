@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class mailingController extends Controller
+class MailingController extends Controller
 {
     public function catch(Request $request)
     {
