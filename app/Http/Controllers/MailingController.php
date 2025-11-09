@@ -17,7 +17,8 @@ class MailingController extends Controller
         if ($validated) {
 
             $email = MailingList::firstOrCreate([
-                'email' => $request->email
+                'email' => $request->email,
+                'ip_address' => $request->ip()
             ]);
 
             return response()->json([
