@@ -9,8 +9,11 @@ class mailingController extends Controller
     public function catch(Request $request)
     {
 
+
+
         return response()->json([
-            'status' => 1
+            'status' => 1,
+            'email' => $request->email
         ]);
     }
 }
